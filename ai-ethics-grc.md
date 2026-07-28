@@ -14,3 +14,14 @@ This governance, risk, and compliance (GRC) framework ensures all organizational
 ## 3. Compliance & Transparency
 * **Audit Trails:** Maintain automated logs detailing how the AI model reaches its outputs for future regulatory audits.
 * **User Appeal Process:** Provide a transparent, accessible mechanism for users or clients to appeal an automated system decision.
+## 5. High-Risk Sector Compliance Standard Operating Procedures (SOPs)
+
+### Control 5.1: Financial Sector Credit & Lending Bias Defenses
+AI systems used for credit underwriting, mortgage approvals, or interest-rate calculations face strict liability under the Equal Credit Opportunity Act (ECOA).
+*   **Proxy Variable Scrubbing:** The system must actively scrub "proxy variables." Even if a model does not explicitly look at race or gender, it cannot use variables that closely correlate with them (e.g., zip codes, historical neighborhood data, or certain shopping habits).
+*   **Adverse Action Transparency:** If a financial LLM or model denies a loan application, it must generate a human-readable "Adverse Action Notice" detailing the exact top three financial reasons for the denial (e.g., debt-to-income ratio). A vague algorithmic score is legally unacceptable.
+
+### Control 5.2: Healthcare Diagnostic & Resource Allocation Defenses
+AI models used to prioritize patient care, predict health risks, or allocate hospital resources must prevent systemic health disparities.
+*   **Clinical Metric Normalization:** Models must not use financial cost metrics as a proxy for health needs. (Historically, routing more resources to patients who spend more money on healthcare inadvertently discriminates against lower-income demographics).
+*   **Demographic Performance Parity:** The model's diagnostic accuracy (False Positive and False Negative rates) must be statistically equal across all age, race, and gender cohorts. If a diagnostic tool is 95% accurate for one group but only 60% accurate for another, it must be pulled from clinical use immediately.
